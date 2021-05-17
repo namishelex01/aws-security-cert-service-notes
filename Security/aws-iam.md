@@ -1,7 +1,7 @@
 * [**IAM**](https://aws.amazon.com/iam/faqs/)
     * Users, Groups, Roles
         + Roles for EC2 instances
-            + creds found in http://169.254.169.254/latest/meta-data/iam/security-credentials/<role / instance profile name>
+            + creds found in `http://169.254.169.254/latest/meta-data/iam/security-credentials/<role/instance profile name>`
             + To launch an instance, users need iam:PassRole for the relevant roles.
             + Can be attached at launch or later.
             + Auto rotation, built in support for obtaining the creds when using CLI & SDKs
