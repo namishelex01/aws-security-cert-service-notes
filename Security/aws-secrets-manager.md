@@ -34,3 +34,14 @@
     + Parameter Store supports only symmetric KMS keys
     + Accessible from -> EC2, ECS, Secrets Manager, Lambda, CloudFormation, CodeBuild, CodePipeline, CodeDeploy
 
+* Difference between Systems Manager Parameter Store vs Secrets Manager
+
+| | SSM Param Store | Secrets Manager |
+|--|--|--|
+| Store values upto 4096 chars| :white_check_mark: | :white_check_mark: |
+| Values can be encrypted using KMS | :white_check_mark: | :white_check_mark: |
+| Can be referenced in Cloudformation | :white_check_mark: | :white_check_mark: |
+| Built-in password generator |  | :white_check_mark: |
+| Automated secret rotation | | :white_check_mark: |
+| No additional cost | :white_check_mark: | |
+| Cross-account access | | :white_check_mark: |
