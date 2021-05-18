@@ -1,5 +1,4 @@
 * [Secrets manager](https://aws.amazon.com/secrets-manager/faqs/)
-    + Also see: Systems Manager Parameter Store - no rotation features, but free.
     + Automatic rotation for AWS RDS, DocumentDB, Redshift
     + Lambda functions to rotate other types
     + 4kb limit on secrets (JSON docs)
@@ -21,3 +20,17 @@
             }```
         + Condition keys include `secretsmanager:ResourceTag/<tagname>`, `secretsmanager:VersionStage`
         + Configuring rotation requires creating and assigning a role to a Lambda function, which needs e.g. IAMFullAccess
+
+* [Systems Manager Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html)
+    + No rotation, but free
+    + store data = passwords, db strings, AMI IDs, license codes
+    + Features
+        + Change notification
+        + Organize and control access
+        + Label versions
+        + Data validation
+    + String, StringList, and SecureString parameters
+    + SecureString data encryption = AWS KMS key
+    + Parameter Store supports only symmetric KMS keys
+    + Accessible from -> EC2, ECS, Secrets Manager, Lambda, CloudFormation, CodeBuild, CodePipeline, CodeDeploy
+
