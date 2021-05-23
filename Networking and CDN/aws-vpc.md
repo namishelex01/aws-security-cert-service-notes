@@ -77,7 +77,7 @@
 + Can be shared across accounts!
 + CIDR is within the VPC's CIDR and can't overlap other subnets in the VPC. Must have IPv4 CIDR.
 + Associated with a route table for outbound traffic. Default to VPC's main route table. 
-+ Public subnet = route table includes an internet gateway. Otherwise called a private subnet.
++ _Public subnet = route table includes an internet gateway. Otherwise called a private subnet._
 + Instances have a private IP and optionally (configured at subnet + instance level) either a public IP (random from AWS' pool) or an Elastic IP (persistent, owned by your account)
 + Instances with a public/elastic IP also get a public DNS hostname
 
@@ -85,7 +85,7 @@
 
 + Each subnet has a NACL
 + What traffic can enter/exit a subnet
-+ Stateless - must have explicit inbound and outbound rules - replies aren't special. For web-facing servers, need to allow outbound ephemeral ports e.g. 1024+ for all addresses
++ _Stateless - must have explicit inbound and outbound rules - replies aren't special. For web-facing servers, need to allow outbound ephemeral ports e.g. 1024+ for all addresses_
 + VPC default NACL is used for new subnets, its initial rules allow all traffic
 + Rules: Allow/Deny, dest port, src/dst addr, protocol.
 + Rules evaluated in order until one matches. Default deny (there's an immutable final deny rule that matches all).
@@ -119,5 +119,5 @@
 + src/dest can be ip range; a sg in this VPC or a peered one; service prefix list for gateway endpoints
 + Default rules in a new group: no inbound, all outbound.
 + The default security group also allows inbound from other instances in the sg.
-+ Stateful - responses are always allowed
++ _Stateful - responses are always allowed_
 + Can reference SGs in peered VPCs.
