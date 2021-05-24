@@ -1,4 +1,4 @@
-* [RDS](https://aws.amazon.com/rds/)
+* [RDS](https://aws.amazon.com/rds/faqs/)
     + IAM controls database instances. Each instance type has its own permission model for managing the database - a master user is created with the instance.
     + Lots of different resources. The main one is an instance - `db` in the arn. No resource based policies.
     + 'RDS Encryption' - encryption at rest, set during creation, uses KMS. Covers database, backups, replicas, snapshots.
